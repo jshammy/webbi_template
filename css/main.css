@@ -16,7 +16,14 @@ a {
   text-decoration: none;
 }
 
+#menu-button {
+  float: right;
+  visibility: hidden;
+}
+
 header {
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
   position: fixed;
   height: var(--header-height);
   left: 0;
@@ -26,8 +33,6 @@ header {
 
 nav {
   align-items: center;
-  background-image: url("../img/bg.jpg");
-  background-size: cover;
   height: var(--remain-height);
   display: flex;
   justify-content: space-between;
@@ -90,4 +95,13 @@ nav > .links a:hover {
 /* adds margin between header and content so header wont block content until scrolled down */
 .blanker {
   margin-top: var(--header-height);
+}
+
+@media screen and (max-width: 575px) {
+  nav {
+    visibility: hidden;
+  }
+  #menu-button {
+    visibility: visible;
+  }
 }
