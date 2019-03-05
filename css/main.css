@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --header-height: 245px;
+  --topbar-height: 32px;
+  --remain-height: calc(var(--header-height) - var(--topbar-height) );
+}
+
+a {
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  height: var(--header-height);
+  left: 0;
+  top: 0;
+  width: 100vw;
+}
+
+nav {
+  align-items: center;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  height: var(--remain-height);
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  width: 100vw;
+}
+
+nav a > img:first-of-type {
+  height: calc( var(--remain-height) / 1.25 );
+  width: calc( var(--remain-height) / 1.25 );
+  max-height: 128px;
+  max-width: 128px;
+  margin-left: 24px;
+  -webkit-box-shadow: 0px 3px 50px -7px black;
+  -moz-box-shadow: 0px 3px 50px -7px black;
+  box-shadow: 0px 3px 50px -7px black;
+}
+
+nav > .links {
+  display: inline-flex;
+}
+
+nav > .links a {
+  padding: 24px;
+}
+
+nav > .links a:hover {
+  background-color: rgba( 220, 220, 220, .2 );
+  border-radius: 4px;
+}
+
+.top-bar {
+  background-color: #363537;
+  height: var(--topbar-height);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  width: 100vw;
+}
+
+.some-icons {
+  align-items: center;
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+.some-icons > a, i {
+  color: white;;
+  padding: 4px;
+}
+
+.some-icons > a:last-of-type {
+  margin-right: 16px;
+}
+
+.some-icons > a:hover, i:hover {
+  color: rgb(238,186,84);
+}
+
+/* adds margin between header and content so header wont block content until scrolled down */
+.blanker {
+  margin-top: var(--header-height);
+}
